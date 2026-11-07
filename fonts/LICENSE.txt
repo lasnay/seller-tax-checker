@@ -1,5 +1,4 @@
-Fredoka - Copyright 2016 The Fredoka Project Authors (https://github.com/hafontia-zz/Fredoka)
 Montserrat - Copyright 2011 The Montserrat Project Authors (https://github.com/JulietaUla/Montserrat)
 
-Both fonts are licensed under the SIL Open Font License, Version 1.1:
+Licensed under the SIL Open Font License, Version 1.1:
 https://openfontlicense.org/open-font-license-official-text/
