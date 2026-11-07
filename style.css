@@ -198,3 +198,51 @@ input[type=number]:focus,input[type=date]:focus{outline:none;border-color:var(--
   .grid2,.stats,.seg{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
 }
+
+/* ===== color layer ===== */
+:root{--navy1:#0f2f5c;--navy2:#14396a;--navy3:#1f5aa6;--sun:#ffd84d;--sun-h:#ffcc1f;--sun-soft:#fff7da;--sky-soft:#edf3ff;
+  --c-blue:#2f6fde;--c-orange:#ef7a2b;--c-green:#13a06a}
+.logo-mark svg{stroke:var(--sun)}
+.band{background:radial-gradient(circle at 88% 12%,rgba(255,216,77,.20),transparent 42%),radial-gradient(circle at 8% 100%,rgba(47,111,222,.45),transparent 45%),linear-gradient(135deg,var(--navy1),var(--navy2) 55%,var(--navy3));color:#fff}
+.hero{border-bottom:0}
+.hero .eyebrow,.page-head .eyebrow{color:var(--sun)}
+.hero h1,.page-head h1{color:#fff}
+.hero .lead,.page-head .lead{color:#d3e0f2}
+.hero .hl{background:none;color:var(--sun)}
+.hero .btn,.cta .btn{background:var(--sun);color:var(--ink)}
+.hero .btn:hover,.cta .btn:hover{background:var(--sun-h)}
+.hero .btn-ghost{background:transparent;color:#fff}
+.hero .trust{color:#d3e0f2}
+.hero .trust svg{stroke:#6fe3b0}
+.hero .preview{border:0;box-shadow:0 24px 60px rgba(5,15,35,.45)}
+.page-head{border-bottom:0}
+.crumbs,.crumbs a{color:#a9bddb}
+.crumbs a:hover{color:var(--sun)}
+
+.choice{border-top:4px solid var(--c)}
+.choice:hover{border-color:var(--c);border-top-color:var(--c);box-shadow:0 12px 30px color-mix(in srgb,var(--c) 22%,transparent)}
+.choice .ic{background:var(--c)}
+.choice .ic svg{stroke:#fff}
+.choice .go{color:var(--c)}
+
+.section.sun{background:var(--sun-soft);border-top:1px solid #f3e3a6;border-bottom:1px solid #f3e3a6}
+.section.skyb{background:var(--sky-soft);border-top:1px solid #d9e5fb;border-bottom:1px solid #d9e5fb}
+.fact{border:0;box-shadow:0 1px 2px rgba(15,31,51,.05);border-left:5px solid var(--c)}
+.fact b{color:var(--c)}
+.links a{border-left:5px solid var(--c,var(--c-blue))}
+.links a:hover{border-color:var(--c,var(--c-blue))}
+
+.aside{background:var(--sun-soft);border-color:#f3e3a6}
+.panel{border-top:4px solid var(--c,var(--brand))}
+.step{background:var(--c,var(--brand))}
+.cta{background:linear-gradient(135deg,var(--navy2),var(--navy3));color:#fff}
+
+.site-footer{background:var(--navy1);border-top:0;color:#c3d0e4}
+.site-footer .logo{color:#fff}
+.site-footer h4{color:#fff}
+.site-footer a{color:#c3d0e4}
+.site-footer a:hover{color:var(--sun)}
+.foot-legal{border-top-color:rgba(255,255,255,.12);color:#93a6c4}
+.band .preview{color:var(--ink)}
+.choice .go,.fact b{color:color-mix(in srgb,var(--c) 72%,#000)}
+.step{background:color-mix(in srgb,var(--c,var(--brand)) 75%,#000)}

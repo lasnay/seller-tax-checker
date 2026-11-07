@@ -36,7 +36,7 @@ def page(name, meta, head_extra, body):
     hero = ""
     if "hero" in meta:
         crumb, title, lead = [x.strip() for x in meta["hero"].split("|")]
-        hero = f'''<section class="page-head"><div class="wrap">
+        hero = f'''<section class="page-head band"><div class="wrap">
   <p class="crumbs"><a href="index.html">Accueil</a> › {crumb}</p>
   <h1>{title}</h1>
   <p class="lead">{lead}</p>
