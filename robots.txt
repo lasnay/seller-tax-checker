@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lasnay.github.io/seller-tax-checker/sitemap.xml

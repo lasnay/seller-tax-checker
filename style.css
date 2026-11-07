@@ -33,3 +33,13 @@ summary{cursor:pointer;font-weight:600}
 .legal{color:var(--muted);font-size:.85rem;margin:20px 0 40px}
 a{color:var(--accent)}
 @media (max-width:520px){.row{grid-template-columns:1fr 1fr}.row .name{grid-column:1/-1}.row.head{display:none}}
+.prose h2{margin:22px 0 6px}
+.prose h2:first-child{margin-top:0}
+.prose ul,nav ul{padding-left:20px}
+.crumb{margin:0 0 6px}
+.crumb a{color:#fff}
+.cta{margin:24px 0}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{opacity:.9}
+@media (prefers-color-scheme:dark){.btn{color:#10151c}}
+footer.links{margin:0 0 24px;font-size:.9rem}
