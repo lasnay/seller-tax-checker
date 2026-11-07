@@ -86,6 +86,7 @@ def page(name, meta, head_extra, body):
 {body}
 </main>
 {FOOTER.replace("{{UPDATED}}", updated)}{script}
+<script data-goatcounter="https://clearseller.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
 '''
