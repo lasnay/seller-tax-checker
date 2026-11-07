@@ -1,5 +1,3 @@
-const SALES_THRESHOLD = 30;
-const AMOUNT_THRESHOLD = 2000;
 const DAY = 86400000;
 
 const $ = id => document.getElementById(id);
@@ -9,10 +7,6 @@ const longDate = d => d.toLocaleDateString("fr-FR", { day: "numeric", month: "lo
 
 const today = new Date();
 $("date").value = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
-
-function verdict(kind, icon, title, body) {
-  return `<div class="verdict ${kind}"><div class="ico">${icon}</div><div><h3>${title}</h3><p>${body}</p></div></div>`;
-}
 
 function compute() {
   const count = num("count"), amount = num("amount");
@@ -29,14 +23,14 @@ function compute() {
     return;
   }
 
-  const projCount = Math.round(count * daysInYear / dayIndex);
+  const projCount = Math.floor(count * daysInYear / dayIndex);
   const projAmount = amount * daysInYear / dayIndex;
   const reached = count >= SALES_THRESHOLD || amount > AMOUNT_THRESHOLD;
   let html = "";
 
   if (reached) {
     html += verdict("warn", "!", "Tu as déjà atteint le seuil cette année",
-      "La plateforme transmettra tes ventes au fisc. Ce n'est pas un impôt : vérifie avec le simulateur si tu dois payer quelque chose.");
+      "<p>La plateforme transmettra tes ventes au fisc. Ce n'est pas un impôt : vérifie avec le simulateur si tu dois payer quelque chose.</p>");
   } else {
     const crossings = [];
     if (count > 0) crossings.push(Math.ceil(SALES_THRESHOLD * dayIndex / count));
@@ -45,10 +39,10 @@ function compute() {
     if (crossDay <= daysInYear) {
       const crossDate = new Date(y, 0, crossDay);
       html += verdict("warn", "!", `À ce rythme, tu passerais le seuil vers le ${longDate(crossDate)}`,
-        "La plateforme transmettrait alors tes ventes au fisc. Ce n'est pas un impôt en soi.");
+        "<p>La plateforme transmettrait alors tes ventes au fisc. Ce n'est pas un impôt en soi.</p>");
     } else {
       html += verdict("ok", "✓", "À ce rythme, tu resteras sous le seuil",
-        `Tu finirais l'année autour de ${projCount} ventes et ${eur(projAmount)}.`);
+        `<p>Tu finirais l'année autour de ${projCount} ventes et ${eur(projAmount)}.</p>`);
     }
   }
 

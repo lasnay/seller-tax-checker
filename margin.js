@@ -1,6 +1,3 @@
-const MICRO_SALES_RATE = 0.123;
-const VL_RATE = 0.01;
-
 const $ = id => document.getElementById(id);
 const num = id => Math.max(0, parseFloat($(id).value) || 0);
 const eur = n => n.toLocaleString("fr-FR", { style: "currency", currency: "EUR", minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -9,10 +6,6 @@ const pct = n => (n * 100).toLocaleString("fr-FR", { maximumFractionDigits: 0 })
 function priceFor(profit, costs, variableRate) {
   const share = 1 - variableRate;
   return share > 0 ? (profit + costs) / share : null;
-}
-
-function verdict(kind, icon, title, body) {
-  return `<div class="verdict ${kind}"><div class="ico">${icon}</div><div><h3>${title}</h3><p>${body}</p></div></div>`;
 }
 
 function compute() {
@@ -36,13 +29,13 @@ function compute() {
   }
   if (net < 0) {
     html += verdict("bad", "!", `Tu perds ${eur(-net)} sur cette vente`,
-      breakEven ? `Il faut vendre au moins ${eur(breakEven)} pour ne rien perdre.` : "Les frais dépassent le prix de vente.");
+      `<p>${breakEven ? `Il faut vendre au moins ${eur(breakEven)} pour ne rien perdre.` : "Les frais dépassent le prix de vente."}</p>`);
   } else if (net < target) {
     html += verdict("warn", "!", `Tu gagnes ${eur(net)}, sous ton objectif`,
-      targetPrice ? `Affiche au moins ${eur(targetPrice)} pour gagner ${eur(target)}.` : "");
+      targetPrice ? `<p>Affiche au moins ${eur(targetPrice)} pour gagner ${eur(target)}.</p>` : "");
   } else {
     html += verdict("ok", "✓", `Objectif atteint : tu gagnes ${eur(net)}`,
-      targetPrice ? `Tu pourrais descendre jusqu'à ${eur(targetPrice)} et garder ${eur(target)} de bénéfice.` : "");
+      targetPrice ? `<p>Tu pourrais descendre jusqu'à ${eur(targetPrice)} et garder ${eur(target)} de bénéfice.</p>` : "");
   }
 
   html += `<div class="stats">

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://lasnay.github.io/seller-tax-checker/calcul-marge-revente.html</loc></url>
-  <url><loc>https://lasnay.github.io/seller-tax-checker/declarer-mes-ventes.html</loc></url>
-  <url><loc>https://lasnay.github.io/seller-tax-checker/</loc></url>
-  <url><loc>https://lasnay.github.io/seller-tax-checker/leboncoin-impots.html</loc></url>
-  <url><loc>https://lasnay.github.io/seller-tax-checker/projection-seuil.html</loc></url>
-  <url><loc>https://lasnay.github.io/seller-tax-checker/seuil-30-ventes-2000-euros.html</loc></url>
-  <url><loc>https://lasnay.github.io/seller-tax-checker/vinted-impots.html</loc></url>
+  <url><loc>https://lasnay.github.io/seller-tax-checker/calcul-marge-revente.html</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://lasnay.github.io/seller-tax-checker/confidentialite.html</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://lasnay.github.io/seller-tax-checker/declarer-mes-ventes.html</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://lasnay.github.io/seller-tax-checker/</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://lasnay.github.io/seller-tax-checker/leboncoin-impots.html</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://lasnay.github.io/seller-tax-checker/mentions-legales.html</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://lasnay.github.io/seller-tax-checker/projection-seuil.html</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://lasnay.github.io/seller-tax-checker/seuil-30-ventes-2000-euros.html</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://lasnay.github.io/seller-tax-checker/vinted-impots.html</loc><lastmod>2026-11-07</lastmod></url>
 </urlset>

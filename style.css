@@ -16,6 +16,7 @@ svg{display:block}
 .hl{background:linear-gradient(transparent 60%,var(--hl) 60%);padding:0 .08em}
 
 /* header */
+[id]{scroll-margin-top:84px}
 .site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
 .bar{display:flex;align-items:center;gap:28px;height:68px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800;font-size:1.08rem;letter-spacing:-.01em;white-space:nowrap}
@@ -246,3 +247,4 @@ input[type=number]:focus,input[type=date]:focus{outline:none;border-color:var(--
 .band .preview{color:var(--ink)}
 .choice .go,.fact b{color:color-mix(in srgb,var(--c) 72%,#000)}
 .step{background:color-mix(in srgb,var(--c,var(--brand)) 75%,#000)}
+.updated{margin:14px 0 0;font-size:.82rem;font-weight:600;color:#a9bddb}

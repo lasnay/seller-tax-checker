@@ -1,7 +1,4 @@
 const PLATFORMS = ["Vinted", "Leboncoin", "eBay", "Etsy", "Autre plateforme"];
-const SALES_THRESHOLD = 30;
-const AMOUNT_THRESHOLD = 2000;
-const MICRO_SALES_RATE = 0.123;
 
 const platformsEl = document.getElementById("platforms");
 const resultEl = document.getElementById("result");
@@ -52,10 +49,6 @@ function compute() {
   render({ totalSales, totalAmount, flagged, profile, purchases: num(purchasesEl) });
 }
 
-function verdict(kind, icon, title, body) {
-  return `<div class="verdict ${kind}"><div class="ico">${icon}</div><div><h3>${title}</h3>${body}</div></div>`;
-}
-
 function render({ totalSales, totalAmount, flagged, profile, purchases }) {
   if (totalSales === 0 && totalAmount === 0) {
     resultEl.innerHTML = '<p class="empty">Entre tes ventes pour voir ton résultat.</p>';
@@ -64,8 +57,9 @@ function render({ totalSales, totalAmount, flagged, profile, purchases }) {
   let html = "";
 
   if (flagged.length) {
-    html += verdict("warn", "!", `${flagged.join(", ")} va transmettre tes ventes au fisc`,
-      `<p>Tu atteins ${SALES_THRESHOLD} ventes ou dépasses ${eur(AMOUNT_THRESHOLD)} sur cette plateforme. C'est une information envoyée à l'administration, pas un impôt.</p>`);
+    const many = flagged.length > 1;
+    html += verdict("warn", "!", `${flagged.join(" et ")} ${many ? "vont" : "va"} transmettre tes ventes au fisc`,
+      `<p>Tu atteins ${SALES_THRESHOLD} ventes ou dépasses ${eur(AMOUNT_THRESHOLD)} sur ${many ? "ces plateformes" : "cette plateforme"}. C'est une information envoyée à l'administration, pas un impôt.</p>`);
   } else {
     html += verdict("ok", "✓", "Aucune plateforme ne transmettra tes ventes au fisc",
       `<p>Tu restes sous ${SALES_THRESHOLD} ventes et ${eur(AMOUNT_THRESHOLD)} sur chacune.</p>`);
