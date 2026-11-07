@@ -56,7 +56,8 @@ function render({ totalSales, totalAmount, flagged, profile, purchases }) {
 
   if (profile === "perso") {
     html += `<div class="verdict"><p><strong>Tu vends tes affaires personnelles d'occasion.</strong></p>
-      <p>En principe, ces ventes ne sont pas imposables, même si la plateforme te déclare. Garde tout de même de quoi prouver que ce sont tes affaires (photos, anciens tickets).</p></div>`;
+      <p>Ces ventes ne sont pas imposables et, si elles restent occasionnelles, n'entraînent pas de cotisations sociales, même si la plateforme te déclare. Les sommes peuvent apparaître pré-remplies dans ta déclaration en ligne sans être imposables.</p>
+      <p>Exceptions : métaux précieux, bijoux, œuvres d'art, objets de collection ou d'antiquité vendus plus de 5 000 € relèvent d'un autre régime.</p></div>`;
   } else {
     const contributions = totalAmount * MICRO_SALES_RATE;
     const margin = totalAmount - purchases;
@@ -68,7 +69,7 @@ function render({ totalSales, totalAmount, flagged, profile, purchases }) {
         <div class="stat"><b>${eur(contributions)}</b><span>Cotisations estimées (${(MICRO_SALES_RATE * 100).toFixed(1).replace(".", ",")} % du CA)</span></div>
         <div class="stat"><b>${eur(left)}</b><span>Il te reste après achats et cotisations, avant impôt sur le revenu</span></div>
       </div>
-      <p class="hint">Estimation indicative. Le taux est celui de la vente de marchandises en micro-entreprise : vérifie-le sur autoentrepreneur.urssaf.fr.</p>`;
+      <p class="hint">Estimation indicative. Taux 2026 de la vente de marchandises en micro-entreprise (hors ACRE de début d'activité, plus basse, et hors 1 % en plus si tu optes pour le versement libératoire de l'impôt). Vérifie sur autoentrepreneur.urssaf.fr.</p>`;
   }
   resultEl.innerHTML = html;
 }
