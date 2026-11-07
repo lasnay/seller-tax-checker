@@ -1,0 +1,35 @@
+:root{--bg:#f6f7fb;--card:#fff;--text:#1c2430;--muted:#5b6678;--accent:#0b7a75;--ok:#1b7f3b;--warn:#b45309;--bad:#b42318;--line:#e3e7ef}
+@media (prefers-color-scheme:dark){:root{--bg:#10151c;--card:#1a212b;--text:#e8edf5;--muted:#9aa6b8;--accent:#3cc4bb;--ok:#5dd28a;--warn:#f2b45a;--bad:#ff8a7a;--line:#2b3441}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+.hero{background:var(--accent);color:#fff;padding:32px 0}
+.hero h1{margin:0 0 8px;font-size:1.7rem;line-height:1.25}
+.hero p{margin:0;opacity:.95}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:16px 0}
+.card h2{margin:0 0 10px;font-size:1.15rem}
+.hint{color:var(--muted);margin:0 0 12px;font-size:.92rem}
+.row{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:10px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}
+.row.head{border-top:0;color:var(--muted);font-size:.85rem}
+.row .name{font-weight:600}
+.row .badge{grid-column:1/-1;font-size:.85rem;display:none}
+.row .badge.on{display:block;color:var(--warn)}
+input[type=number]{width:100%;padding:9px 10px;font-size:1rem;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text)}
+.choice{display:flex;gap:10px;align-items:flex-start;padding:10px;border:1px solid var(--line);border-radius:8px;margin:8px 0;cursor:pointer}
+.choice input{margin-top:5px}
+.field{display:block;margin-top:12px;font-size:.95rem}
+.field input{margin-top:6px}
+.result h2{margin-top:0}
+.verdict{padding:12px 14px;border-radius:8px;border-left:5px solid var(--ok);background:var(--bg);margin:10px 0}
+.verdict.warn{border-color:var(--warn)}
+.verdict.bad{border-color:var(--bad)}
+.verdict p{margin:4px 0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:12px 0}
+.stat{background:var(--bg);border-radius:8px;padding:10px}
+.stat b{display:block;font-size:1.25rem}
+.stat span{color:var(--muted);font-size:.85rem}
+details{border-top:1px solid var(--line);padding:10px 0}
+summary{cursor:pointer;font-weight:600}
+.legal{color:var(--muted);font-size:.85rem;margin:20px 0 40px}
+a{color:var(--accent)}
+@media (max-width:520px){.row{grid-template-columns:1fr 1fr}.row .name{grid-column:1/-1}.row.head{display:none}}
