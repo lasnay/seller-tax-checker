@@ -4,99 +4,108 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vendeur Clair : les outils gratuits des vendeurs Vinted, Leboncoin, eBay</title>
-<meta name="description" content="Simulateur de déclaration DAC7, calcul de marge, projection du seuil de 30 ventes ou 2 000 € : les outils gratuits des vendeurs Vinted, Leboncoin, eBay et Etsy.">
+<meta name="description" content="Dois-je déclarer mes ventes ? Combien je gagne vraiment ? Vais-je dépasser 30 ventes ou 2 000 € ? Les outils gratuits des vendeurs Vinted, Leboncoin, eBay et Etsy.">
 <link rel="canonical" href="https://lasnay.github.io/seller-tax-checker/">
-<link rel="preload" href="fonts/fredoka.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="site-header">
-  <a class="logo" href="index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 36 11 20 19 4 11z" fill="#ffd04d"/><path d="M4 11l16 8v18L4 29z" fill="#f08a1c"/><path d="M36 11 20 19v18l16-8z" fill="#c45a12"/><path d="M14 11.2l4.5 2.3 8-4.6" stroke="#a8470c" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Vendeur Clair</a>
-  <nav class="hdr-nav" aria-label="Menu principal"><a href="declarer-mes-ventes.html">Déclaration</a><a href="calcul-marge-revente.html">Marge</a><a href="projection-seuil.html">Seuil</a><a href="index.html#guides">Guides</a></nav>
-  <a class="btn btn-sm" href="declarer-mes-ventes.html">Simulateur</a>
-  <details class="menu"><summary aria-label="Ouvrir le menu">☰</summary><nav class="menu-panel"><a href="declarer-mes-ventes.html">Déclaration</a><a href="calcul-marge-revente.html">Marge</a><a href="projection-seuil.html">Seuil</a><a href="index.html#guides">Guides</a></nav></details>
-</header>
+<header class="site-header"><div class="wrap bar">
+  <a class="logo" href="index.html"><span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Vendeur Clair</a>
+  <nav class="hdr-nav" aria-label="Menu principal"><a href="declarer-mes-ventes.html">Dois-je déclarer ?</a><a href="calcul-marge-revente.html">Calcul de marge</a><a href="projection-seuil.html">Projection du seuil</a><a href="index.html#guides">Guides</a></nav>
+  <details class="menu"><summary>Menu</summary><nav class="menu-panel"><a href="declarer-mes-ventes.html">Dois-je déclarer ?</a><a href="calcul-marge-revente.html">Calcul de marge</a><a href="projection-seuil.html">Projection du seuil</a><a href="index.html#guides">Guides</a></nav></details>
+</div></header>
 <main>
 
-<section class="sky hero"><div class="cloud" style="--w:340px;top:14%;--t:95s;animation-delay:-10s"></div><div class="cloud" style="--w:220px;top:34%;--t:70s;animation-delay:-40s"></div><div class="cloud" style="--w:420px;top:58%;--t:120s;animation-delay:-80s"></div><div class="cloud" style="--w:180px;top:8%;--t:60s;animation-delay:-25s"></div><div class="cloud" style="--w:280px;top:46%;--t:85s;animation-delay:-5s"></div>
-  <div class="hero-inner">
-    <span class="status"><i></i>Règles 2026 à jour</span>
-    <h1 class="title3d">Vendeur<br>Clair</h1>
-    <p class="tagline">Les outils gratuits des vendeurs Vinted, Leboncoin, eBay et Etsy.</p>
-    <div class="hero-ctas">
-      <a class="btn" href="declarer-mes-ventes.html">Dois-je déclarer ?</a>
-      <a class="btn btn-light" href="#outils">Voir les outils</a>
+<section class="hero"><div class="wrap hero-grid">
+  <div>
+    <p class="eyebrow">Pour les vendeurs Vinted, Leboncoin, eBay et Etsy</p>
+    <h1>Vends en ligne <span class="hl">sans mauvaise surprise</span> avec les impôts.</h1>
+    <p class="lead">Des outils gratuits pour savoir si tu dois déclarer, ce que tu gagnes vraiment, et quand tu atteindras le seuil des 30 ventes.</p>
+    <div class="ctas">
+      <a class="btn" href="declarer-mes-ventes.html">Faire le test (30 secondes)</a>
+      <a class="btn btn-ghost" href="#outils">Voir tous les outils →</a>
+    </div>
+    <ul class="trust">
+      <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Règles officielles 2026</li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Sans inscription</li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Rien n'est enregistré</li>
+    </ul>
+  </div>
+  <div class="preview" aria-label="Exemple de résultat">
+    <div class="preview-top"><span>Exemple de résultat</span><span class="pill warn">Seuil atteint</span></div>
+    <div class="plat-head"><b>Vinted</b><span class="meter-l">34 ventes · 610 €</span></div>
+    <div class="meters">
+      <div><div class="meter hit"><i style="width:100%"></i></div><div class="meter-l">34 / 30 ventes</div></div>
+      <div><div class="meter"><i style="width:31%"></i></div><div class="meter-l">610 € / 2 000 €</div></div>
+    </div>
+    <div class="result">
+      <div class="verdict warn"><div class="ico">!</div><div><h3>Vinted transmettra tes ventes au fisc</h3><p>C'est une simple information, pas un impôt.</p></div></div>
+      <div class="verdict"><div class="ico">✓</div><div><h3>Tes affaires personnelles : rien à payer</h3><p>Vendre ce que tu as utilisé n'est pas imposable.</p></div></div>
     </div>
   </div>
-</section>
+</div></section>
 
 <section class="section" id="outils"><div class="wrap">
-  <h2 class="section-title">Les outils</h2>
-  <p class="section-sub">Chaque outil répond à une question précise, en 30 secondes, sans inscription.</p>
-  <div class="tools">
-    <a class="tool-card" href="declarer-mes-ventes.html">
-      <span class="chip">Populaire</span>
-      <span class="tile" style="--c:#43b0e6;--cd:#2a7fb0"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M10 14l2 2 4-4"/></svg></span>
-      <h3>Dois-je déclarer mes ventes ?</h3>
-      <p>Sais si ta plateforme va te déclarer au fisc, et si tu dois vraiment payer quelque chose.</p>
-      <span class="go">Lancer l'outil →</span>
+  <h2>Que veux-tu savoir ?</h2>
+  <p class="intro">Choisis ta question. Chaque outil te répond en moins d'une minute.</p>
+  <div class="choices">
+    <a class="choice" href="declarer-mes-ventes.html">
+      <span class="ic"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M10 14l2 2 4-4"/></svg></span>
+      <h3>Est-ce que je dois déclarer mes ventes ?</h3>
+      <p>Tu sais si ta plateforme te déclare au fisc, et si tu as vraiment quelque chose à payer.</p>
+      <span class="go">Faire le test →</span>
     </a>
-    <a class="tool-card" href="calcul-marge-revente.html">
-      <span class="tile" style="--c:#f08a1c;--cd:#a8470c"><svg viewBox="0 0 24 24"><path d="M4 19h16"/><path d="M6 15l4-4 3 3 5-6"/><path d="M14 8h4v4"/></svg></span>
-      <h3>Calcul de marge</h3>
-      <p>Ce qu'il te reste vraiment après l'envoi, les frais et les cotisations. Et le bon prix de vente.</p>
-      <span class="go">Lancer l'outil →</span>
+    <a class="choice" href="calcul-marge-revente.html">
+      <span class="ic"><svg viewBox="0 0 24 24"><path d="M4 19h16"/><path d="M6 15l4-4 3 3 5-6"/><path d="M14 8h4v4"/></svg></span>
+      <h3>Combien je gagne vraiment sur une revente ?</h3>
+      <p>Ton bénéfice net après l'envoi, les frais et les cotisations, et le bon prix à afficher.</p>
+      <span class="go">Calculer ma marge →</span>
     </a>
-    <a class="tool-card" href="projection-seuil.html">
-      <span class="tile" style="--c:#1f9d57;--cd:#136b3a"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M8 3v4M16 3v4M4 10h16"/><path d="M9 15l2 2 4-4"/></svg></span>
-      <h3>Vais-je dépasser le seuil ?</h3>
-      <p>À ton rythme actuel, combien de ventes en fin d'année, et à quelle date tu passerais les 30 ventes ou 2 000 €.</p>
-      <span class="go">Lancer l'outil →</span>
+    <a class="choice" href="projection-seuil.html">
+      <span class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span>
+      <h3>Vais-je dépasser le seuil cette année ?</h3>
+      <p>À ton rythme actuel, où tu en seras au 31 décembre, et la date à laquelle tu passerais le seuil.</p>
+      <span class="go">Voir ma projection →</span>
     </a>
   </div>
 </div></section>
 
-<section class="section"><div class="wrap">
-  <h2 class="section-title">Pourquoi Vendeur Clair ?</h2>
-  <p class="section-sub">Des réponses fiables, sans jargon et sans piège.</p>
-  <div class="features">
-    <div class="feature"><span class="tile" style="--c:#43b0e6;--cd:#2a7fb0"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
-      <h3>Sources officielles</h3><p>Règles vérifiées sur impots.gouv.fr, l'URSSAF et les pages DAC7 des plateformes.</p></div>
-    <div class="feature"><span class="tile" style="--c:#f08a1c;--cd:#a8470c"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="3"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>
-      <h3>Rien n'est enregistré</h3><p>Les calculs se font dans ton navigateur. Tes chiffres ne quittent jamais ton écran.</p></div>
-    <div class="feature"><span class="tile" style="--c:#1f9d57;--cd:#136b3a"><svg viewBox="0 0 24 24"><path d="M4 11h16v9H4zM3 7h18v4H3zM12 7v13"/><path d="M12 7c-2-3-5-3-5-1s3 1 5 1c2 0 5 1 5-1s-3-2-5 1"/></svg></span>
-      <h3>Gratuit, sans compte</h3><p>Pas d'inscription, pas d'e-mail demandé. Tu arrives, tu calcules, tu repars.</p></div>
+<section class="section alt"><div class="wrap">
+  <h2>L'essentiel en trois chiffres</h2>
+  <p class="intro">Ce qu'il faut retenir des règles officielles.</p>
+  <div class="facts">
+    <div class="fact"><b>30 ventes</b><h3>ou plus sur l'année</h3><p>À partir de là, la plateforme transmet tes ventes au fisc. Le compte se fait plateforme par plateforme.</p></div>
+    <div class="fact"><b>2 000 €</b><h3>encaissés sur l'année</h3><p>L'autre seuil. Un seul des deux suffit pour que tes informations soient transmises.</p></div>
+    <div class="fact"><b>0 €</b><h3>d'impôt sur tes affaires</h3><p>Vendre ce que tu as utilisé n'est pas imposable, même au-delà du seuil. Acheter pour revendre, si.</p></div>
   </div>
 </div></section>
 
 <section class="section" id="guides"><div class="wrap">
-  <h2 class="section-title">Les guides</h2>
-  <p class="section-sub">Les règles officielles expliquées simplement.</p>
-  <div class="guide-list">
-    <a class="guide-link" href="vinted-impots.html"><b>Impôts Vinted</b><span>Vinted déclare-t-il mes ventes ? Quand suis-je imposable ?</span></a>
-    <a class="guide-link" href="leboncoin-impots.html"><b>Impôts Leboncoin</b><span>Les règles des ventes entre particuliers sur Leboncoin.</span></a>
-    <a class="guide-link" href="seuil-30-ventes-2000-euros.html"><b>Seuil de 30 ventes ou 2 000 €</b><span>Ce que DAC7 veut dire, et ce qu'il ne veut pas dire.</span></a>
+  <h2>Les guides</h2>
+  <p class="intro">Les règles expliquées simplement, avec leurs sources officielles.</p>
+  <div class="links">
+    <a href="vinted-impots.html"><b>Impôts Vinted</b><span>Vinted déclare-t-il mes ventes ? Quand suis-je imposable ?</span></a>
+    <a href="leboncoin-impots.html"><b>Impôts Leboncoin</b><span>Les règles des ventes entre particuliers.</span></a>
+    <a href="seuil-30-ventes-2000-euros.html"><b>Le seuil de 30 ventes ou 2 000 €</b><span>Ce que la règle DAC7 veut dire, et ce qu'elle ne veut pas dire.</span></a>
   </div>
 </div></section>
 
-<section class="section"><div class="wrap">
-  <h2 class="section-title">Questions fréquentes</h2>
-  <p class="section-sub">Ce que tous les vendeurs se demandent.</p>
-  <div class="faq">
-    <details class="q"><summary>C'est quoi DAC7 ?</summary><p>Une directive européenne. Depuis 2023, les plateformes (Vinted, Leboncoin, eBay, Etsy…) transmettent à l'administration fiscale les ventes des vendeurs qui atteignent 30 ventes ou plus de 2 000 € sur une année civile. Ce n'est pas un impôt : c'est une information envoyée au fisc.</p></details>
-    <details class="q"><summary>Si Vinted me déclare, vais-je payer des impôts ?</summary><p>Pas automatiquement. Vendre ses affaires personnelles d'occasion n'est en principe pas imposable. Acheter pour revendre de façon régulière, en revanche, est une activité commerciale.</p></details>
-    <details class="q"><summary>Les seuils sont-ils cumulés entre plateformes ?</summary><p>Non : chaque plateforme compte de son côté. Mais si tu achètes pour revendre, ce qui compte pour l'administration est ton activité totale, toutes plateformes confondues.</p></details>
-  </div>
+<section class="section alt"><div class="wrap faq">
+  <h2>Questions fréquentes</h2>
+  <p class="intro">Ce que tous les vendeurs se demandent.</p>
+  <details class="q"><summary>C'est quoi DAC7 ?</summary><p>Une directive européenne. Depuis 2023, les plateformes (Vinted, Leboncoin, eBay, Etsy…) transmettent à l'administration fiscale les ventes des vendeurs qui atteignent 30 ventes ou plus de 2 000 € sur une année civile. Ce n'est pas un impôt : c'est une information envoyée au fisc.</p></details>
+  <details class="q"><summary>Si Vinted me déclare, vais-je payer des impôts ?</summary><p>Pas automatiquement. Vendre ses affaires personnelles d'occasion n'est en principe pas imposable. Acheter pour revendre de façon régulière, en revanche, est une activité commerciale.</p></details>
+  <details class="q"><summary>Les seuils sont-ils cumulés entre plateformes ?</summary><p>Non : chaque plateforme compte de son côté. Mais si tu achètes pour revendre, ce qui compte pour l'administration est ton activité totale, toutes plateformes confondues.</p></details>
 </div></section>
 
 </main>
 <footer class="site-footer"><div class="wrap">
   <div class="foot-grid">
-    <div><div class="foot-brand">Vendeur Clair</div><p>Les outils gratuits des vendeurs Vinted, Leboncoin, eBay et Etsy. Sans inscription, rien n'est enregistré.</p></div>
+    <div><a class="logo" href="index.html"><span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Vendeur Clair</a><p>Des outils gratuits pour les vendeurs Vinted, Leboncoin, eBay et Etsy. Sans inscription, rien n'est enregistré.</p></div>
     <div><h4>Outils</h4><ul><li><a href="declarer-mes-ventes.html">Dois-je déclarer ?</a></li><li><a href="calcul-marge-revente.html">Calcul de marge</a></li><li><a href="projection-seuil.html">Projection du seuil</a></li></ul></div>
-    <div><h4>Guides</h4><ul><li><a href="vinted-impots.html">Impôts Vinted</a></li><li><a href="leboncoin-impots.html">Impôts Leboncoin</a></li><li><a href="seuil-30-ventes-2000-euros.html">Seuil DAC7</a></li></ul></div>
-    <div><h4>Sources</h4><ul><li><a href="https://www.impots.gouv.fr/revenus-de-plateformes-collaboratives-0" rel="noopener">impots.gouv.fr</a></li><li><a href="https://www.vinted.fr/dac7" rel="noopener">Vinted – DAC7</a></li><li><a href="https://www.autoentrepreneur.urssaf.fr" rel="noopener">URSSAF</a></li></ul></div>
+    <div><h4>Guides</h4><ul><li><a href="vinted-impots.html">Impôts Vinted</a></li><li><a href="leboncoin-impots.html">Impôts Leboncoin</a></li><li><a href="seuil-30-ventes-2000-euros.html">Seuil de 30 ventes</a></li></ul></div>
+    <div><h4>Sources officielles</h4><ul><li><a href="https://www.impots.gouv.fr/revenus-de-plateformes-collaboratives-0" rel="noopener">impots.gouv.fr</a></li><li><a href="https://www.vinted.fr/dac7" rel="noopener">Vinted – DAC7</a></li><li><a href="https://www.autoentrepreneur.urssaf.fr" rel="noopener">URSSAF</a></li></ul></div>
   </div>
   <p class="foot-legal">Vendeur Clair donne une information générale et ne remplace pas l'avis d'un professionnel. Les règles fiscales évoluent : vérifie ta situation sur les sites officiels. Site indépendant, sans lien avec Vinted, Leboncoin, eBay ou Etsy.</p>
 </div></footer>

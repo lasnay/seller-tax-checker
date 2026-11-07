@@ -4,35 +4,28 @@ import pathlib, re
 ROOT = pathlib.Path(__file__).parent
 BASE = "https://lasnay.github.io/seller-tax-checker/"
 
-LOGO = ('<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 36 11 20 19 4 11z" fill="#ffd04d"/>'
-        '<path d="M4 11l16 8v18L4 29z" fill="#f08a1c"/><path d="M36 11 20 19v18l16-8z" fill="#c45a12"/>'
-        '<path d="M14 11.2l4.5 2.3 8-4.6" stroke="#a8470c" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+LOGO = '<span class="logo-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>'
 
-NAV = [("declarer-mes-ventes.html", "Déclaration"), ("calcul-marge-revente.html", "Marge"),
-       ("projection-seuil.html", "Seuil"), ("index.html#guides", "Guides")]
-
-CLOUDS = "".join(
-    f'<div class="cloud" style="--w:{w}px;top:{t}%;--t:{d}s;animation-delay:-{o}s"></div>'
-    for w, t, d, o in [(340, 14, 95, 10), (220, 34, 70, 40), (420, 58, 120, 80), (180, 8, 60, 25), (280, 46, 85, 5)])
+NAV = [("declarer-mes-ventes.html", "Dois-je déclarer ?"), ("calcul-marge-revente.html", "Calcul de marge"),
+       ("projection-seuil.html", "Projection du seuil"), ("index.html#guides", "Guides")]
 
 
 def header(current):
     links = "".join(f'<a href="{h}"{" aria-current=page" if h == current else ""}>{n}</a>' for h, n in NAV)
     mobile = "".join(f'<a href="{h}">{n}</a>' for h, n in NAV)
-    return f'''<header class="site-header">
+    return f'''<header class="site-header"><div class="wrap bar">
   <a class="logo" href="index.html">{LOGO}Vendeur Clair</a>
   <nav class="hdr-nav" aria-label="Menu principal">{links}</nav>
-  <a class="btn btn-sm" href="declarer-mes-ventes.html">Simulateur</a>
-  <details class="menu"><summary aria-label="Ouvrir le menu">☰</summary><nav class="menu-panel">{mobile}</nav></details>
-</header>'''
+  <details class="menu"><summary>Menu</summary><nav class="menu-panel">{mobile}</nav></details>
+</div></header>'''
 
 
-FOOTER = f'''<footer class="site-footer"><div class="wrap">
+FOOTER = '''<footer class="site-footer"><div class="wrap">
   <div class="foot-grid">
-    <div><div class="foot-brand">Vendeur Clair</div><p>Les outils gratuits des vendeurs Vinted, Leboncoin, eBay et Etsy. Sans inscription, rien n'est enregistré.</p></div>
+    <div><a class="logo" href="index.html">''' + LOGO + '''Vendeur Clair</a><p>Des outils gratuits pour les vendeurs Vinted, Leboncoin, eBay et Etsy. Sans inscription, rien n'est enregistré.</p></div>
     <div><h4>Outils</h4><ul><li><a href="declarer-mes-ventes.html">Dois-je déclarer ?</a></li><li><a href="calcul-marge-revente.html">Calcul de marge</a></li><li><a href="projection-seuil.html">Projection du seuil</a></li></ul></div>
-    <div><h4>Guides</h4><ul><li><a href="vinted-impots.html">Impôts Vinted</a></li><li><a href="leboncoin-impots.html">Impôts Leboncoin</a></li><li><a href="seuil-30-ventes-2000-euros.html">Seuil DAC7</a></li></ul></div>
-    <div><h4>Sources</h4><ul><li><a href="https://www.impots.gouv.fr/revenus-de-plateformes-collaboratives-0" rel="noopener">impots.gouv.fr</a></li><li><a href="https://www.vinted.fr/dac7" rel="noopener">Vinted – DAC7</a></li><li><a href="https://www.autoentrepreneur.urssaf.fr" rel="noopener">URSSAF</a></li></ul></div>
+    <div><h4>Guides</h4><ul><li><a href="vinted-impots.html">Impôts Vinted</a></li><li><a href="leboncoin-impots.html">Impôts Leboncoin</a></li><li><a href="seuil-30-ventes-2000-euros.html">Seuil de 30 ventes</a></li></ul></div>
+    <div><h4>Sources officielles</h4><ul><li><a href="https://www.impots.gouv.fr/revenus-de-plateformes-collaboratives-0" rel="noopener">impots.gouv.fr</a></li><li><a href="https://www.vinted.fr/dac7" rel="noopener">Vinted – DAC7</a></li><li><a href="https://www.autoentrepreneur.urssaf.fr" rel="noopener">URSSAF</a></li></ul></div>
   </div>
   <p class="foot-legal">Vendeur Clair donne une information générale et ne remplace pas l'avis d'un professionnel. Les règles fiscales évoluent : vérifie ta situation sur les sites officiels. Site indépendant, sans lien avec Vinted, Leboncoin, eBay ou Etsy.</p>
 </div></footer>'''
@@ -43,10 +36,10 @@ def page(name, meta, head_extra, body):
     hero = ""
     if "hero" in meta:
         crumb, title, lead = [x.strip() for x in meta["hero"].split("|")]
-        hero = f'''<section class="sky page-sky">{CLOUDS}<div class="hero-inner">
-  <a class="crumb" href="index.html">← {crumb}</a>
-  <h1 class="page-title">{title}</h1>
-  <p class="page-lead">{lead}</p>
+        hero = f'''<section class="page-head"><div class="wrap">
+  <p class="crumbs"><a href="index.html">Accueil</a> › {crumb}</p>
+  <h1>{title}</h1>
+  <p class="lead">{lead}</p>
 </div></section>'''
     script = f'\n<script src="{meta["script"]}"></script>' if "script" in meta else ""
     return f'''<!doctype html>
@@ -57,7 +50,6 @@ def page(name, meta, head_extra, body):
 <title>{meta["title"]}</title>
 <meta name="description" content="{meta["description"]}">
 <link rel="canonical" href="{canonical}">
-<link rel="preload" href="fonts/fredoka.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 {head_extra}</head>
@@ -65,7 +57,7 @@ def page(name, meta, head_extra, body):
 {header(name)}
 <main>
 {hero}
-{body.replace("{{CLOUDS}}", CLOUDS)}
+{body}
 </main>
 {FOOTER}{script}
 </body>
