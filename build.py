@@ -57,8 +57,8 @@ def page(name, meta, head_extra, body):
 <title>{meta["title"]}</title>
 <meta name="description" content="{meta["description"]}">
 <link rel="canonical" href="{canonical}">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/fredoka.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 {head_extra}</head>
 <body>
