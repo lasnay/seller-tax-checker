@@ -278,3 +278,4 @@ details.q p{color:#c3d0e4}
 .more strong{color:#fff}
 .site-footer{background:#0b2447}
 @media (max-width:540px){.prose{padding:20px}}
+.links a{align-content:start}
