@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calcul de marge revente Vinted, Leboncoin : bénéfice net et bon prix</title>
+<meta name="description" content="Calcule ton bénéfice net sur une revente Vinted, Leboncoin ou eBay : prix d'achat, envoi, frais, cotisations micro-entrepreneur. Et trouve le prix de vente minimum.">
+<link rel="canonical" href="https://lasnay.github.io/seller-tax-checker/calcul-marge-revente.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="logo" href="index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 36 11 20 19 4 11z" fill="#ffd04d"/><path d="M4 11l16 8v18L4 29z" fill="#f08a1c"/><path d="M36 11 20 19v18l16-8z" fill="#c45a12"/><path d="M14 11.2l4.5 2.3 8-4.6" stroke="#a8470c" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Vendeur Clair</a>
+  <nav class="hdr-nav" aria-label="Menu principal"><a href="declarer-mes-ventes.html">Déclaration</a><a href="calcul-marge-revente.html" aria-current=page>Marge</a><a href="projection-seuil.html">Seuil</a><a href="index.html#guides">Guides</a></nav>
+  <a class="btn btn-sm" href="declarer-mes-ventes.html">Simulateur</a>
+  <details class="menu"><summary aria-label="Ouvrir le menu">☰</summary><nav class="menu-panel"><a href="declarer-mes-ventes.html">Déclaration</a><a href="calcul-marge-revente.html">Marge</a><a href="projection-seuil.html">Seuil</a><a href="index.html#guides">Guides</a></nav></details>
+</header>
+<main>
+<section class="sky page-sky"><div class="cloud" style="--w:340px;top:14%;--t:95s;animation-delay:-10s"></div><div class="cloud" style="--w:220px;top:34%;--t:70s;animation-delay:-40s"></div><div class="cloud" style="--w:420px;top:58%;--t:120s;animation-delay:-80s"></div><div class="cloud" style="--w:180px;top:8%;--t:60s;animation-delay:-25s"></div><div class="cloud" style="--w:280px;top:46%;--t:85s;animation-delay:-5s"></div><div class="hero-inner">
+  <a class="crumb" href="index.html">← Tous les outils</a>
+  <h1 class="page-title">Combien tu gagnes vraiment sur une revente ?</h1>
+  <p class="page-lead">Prix d'achat, envoi, frais, cotisations : tu vois ce qu'il te reste, et le prix minimum à afficher.</p>
+</div></section>
+<div class="wrap panel-wrap"><div class="panel">
+  <div class="block">
+    <h2><span class="step">1</span>L'article</h2>
+    <div class="grid2">
+      <label class="lbl">Prix d'achat (€)<input type="number" id="buy" min="0" step="0.01" value="10" inputmode="decimal"></label>
+      <label class="lbl">Prix de vente (€)<input type="number" id="sell" min="0" step="0.01" value="25" inputmode="decimal"></label>
+      <label class="lbl">Envoi à ta charge (€)<input type="number" id="ship" min="0" step="0.01" value="0" inputmode="decimal"></label>
+      <label class="lbl">Autres frais (€)<small style="font-weight:600"> emballage, mise en avant…</small><input type="number" id="extra" min="0" step="0.01" value="0" inputmode="decimal"></label>
+      <label class="lbl">Commission de la plateforme (%)<input type="number" id="fee" min="0" max="100" step="0.1" value="0" inputmode="decimal"></label>
+      <label class="lbl">Bénéfice visé (€)<input type="number" id="target" min="0" step="0.5" value="10" inputmode="decimal"></label>
+    </div>
+    <p class="note">Sur Vinted, un vendeur particulier ne paie pas de commission : c'est l'acheteur qui paie la protection acheteurs. Sur les autres plateformes, vérifie le taux affiché.</p>
+  </div>
+  <div class="block">
+    <h2><span class="step">2</span>Ton statut</h2>
+    <div class="seg" role="radiogroup" aria-label="Statut">
+      <input type="radio" name="status" id="s-perso" value="perso" checked>
+      <label for="s-perso">Particulier<small>je vends mes affaires</small></label>
+      <input type="radio" name="status" id="s-micro" value="micro">
+      <label for="s-micro">Micro-entrepreneur<small>12,3 % du prix de vente</small></label>
+    </div>
+    <label class="check" id="vlWrap" hidden><input type="checkbox" id="vl"> Versement libératoire de l'impôt (+1 %)</label>
+  </div>
+  <div class="block result" id="result" aria-live="polite"></div>
+</div></div>
+
+</main>
+<footer class="site-footer"><div class="wrap">
+  <div class="foot-grid">
+    <div><div class="foot-brand">Vendeur Clair</div><p>Les outils gratuits des vendeurs Vinted, Leboncoin, eBay et Etsy. Sans inscription, rien n'est enregistré.</p></div>
+    <div><h4>Outils</h4><ul><li><a href="declarer-mes-ventes.html">Dois-je déclarer ?</a></li><li><a href="calcul-marge-revente.html">Calcul de marge</a></li><li><a href="projection-seuil.html">Projection du seuil</a></li></ul></div>
+    <div><h4>Guides</h4><ul><li><a href="vinted-impots.html">Impôts Vinted</a></li><li><a href="leboncoin-impots.html">Impôts Leboncoin</a></li><li><a href="seuil-30-ventes-2000-euros.html">Seuil DAC7</a></li></ul></div>
+    <div><h4>Sources</h4><ul><li><a href="https://www.impots.gouv.fr/revenus-de-plateformes-collaboratives-0" rel="noopener">impots.gouv.fr</a></li><li><a href="https://www.vinted.fr/dac7" rel="noopener">Vinted – DAC7</a></li><li><a href="https://www.autoentrepreneur.urssaf.fr" rel="noopener">URSSAF</a></li></ul></div>
+  </div>
+  <p class="foot-legal">Vendeur Clair donne une information générale et ne remplace pas l'avis d'un professionnel. Les règles fiscales évoluent : vérifie ta situation sur les sites officiels. Site indépendant, sans lien avec Vinted, Leboncoin, eBay ou Etsy.</p>
+</div></footer>
+<script src="margin.js"></script>
+</body>
+</html>

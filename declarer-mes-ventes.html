@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vinted, Leboncoin : dois-je déclarer mes ventes ? Simulateur gratuit</title>
+<meta name="description" content="Calcule en 30 secondes si Vinted, Leboncoin, eBay ou Etsy vont transmettre tes ventes au fisc (seuils DAC7 : 30 ventes ou 2 000 €) et ce que tu dois vraiment déclarer.">
+<link rel="canonical" href="https://lasnay.github.io/seller-tax-checker/declarer-mes-ventes.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="logo" href="index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 36 11 20 19 4 11z" fill="#ffd04d"/><path d="M4 11l16 8v18L4 29z" fill="#f08a1c"/><path d="M36 11 20 19v18l16-8z" fill="#c45a12"/><path d="M14 11.2l4.5 2.3 8-4.6" stroke="#a8470c" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Vendeur Clair</a>
+  <nav class="hdr-nav" aria-label="Menu principal"><a href="declarer-mes-ventes.html" aria-current=page>Déclaration</a><a href="calcul-marge-revente.html">Marge</a><a href="projection-seuil.html">Seuil</a><a href="index.html#guides">Guides</a></nav>
+  <a class="btn btn-sm" href="declarer-mes-ventes.html">Simulateur</a>
+  <details class="menu"><summary aria-label="Ouvrir le menu">☰</summary><nav class="menu-panel"><a href="declarer-mes-ventes.html">Déclaration</a><a href="calcul-marge-revente.html">Marge</a><a href="projection-seuil.html">Seuil</a><a href="index.html#guides">Guides</a></nav></details>
+</header>
+<main>
+<section class="sky page-sky"><div class="cloud" style="--w:340px;top:14%;--t:95s;animation-delay:-10s"></div><div class="cloud" style="--w:220px;top:34%;--t:70s;animation-delay:-40s"></div><div class="cloud" style="--w:420px;top:58%;--t:120s;animation-delay:-80s"></div><div class="cloud" style="--w:180px;top:8%;--t:60s;animation-delay:-25s"></div><div class="cloud" style="--w:280px;top:46%;--t:85s;animation-delay:-5s"></div><div class="hero-inner">
+  <a class="crumb" href="index.html">← Tous les outils</a>
+  <h1 class="page-title">Ta plateforme va-t-elle te déclarer au fisc ?</h1>
+  <p class="page-lead">Entre tes ventes de l'année. Tu sais en 30 secondes si tu es concerné, et ce que ça change vraiment pour toi.</p>
+</div></section>
+<div class="wrap panel-wrap"><div class="panel">
+  <div class="block">
+    <h2><span class="step">1</span>Tes ventes de l'année</h2>
+    <p class="sub">Les seuils se comptent plateforme par plateforme. Laisse à 0 celles que tu n'utilises pas.</p>
+    <div id="platforms"></div>
+  </div>
+  <div class="block">
+    <h2><span class="step">2</span>Que vends-tu ?</h2>
+    <div class="seg" role="radiogroup" aria-label="Type de vente">
+      <input type="radio" name="profile" id="p-perso" value="perso" checked>
+      <label for="p-perso">Mes affaires<small>vêtements, objets utilisés</small></label>
+      <input type="radio" name="profile" id="p-resale" value="resale">
+      <label for="p-resale">J'achète pour revendre<small>pour faire une marge</small></label>
+    </div>
+    <div id="resaleFields" hidden>
+      <label class="lbl" style="margin-top:14px">Mes achats de l'année (€)
+        <input type="number" id="purchases" min="0" step="1" value="0" inputmode="decimal"></label>
+    </div>
+  </div>
+  <div class="block result" id="result" aria-live="polite"></div>
+</div></div>
+
+</main>
+<footer class="site-footer"><div class="wrap">
+  <div class="foot-grid">
+    <div><div class="foot-brand">Vendeur Clair</div><p>Les outils gratuits des vendeurs Vinted, Leboncoin, eBay et Etsy. Sans inscription, rien n'est enregistré.</p></div>
+    <div><h4>Outils</h4><ul><li><a href="declarer-mes-ventes.html">Dois-je déclarer ?</a></li><li><a href="calcul-marge-revente.html">Calcul de marge</a></li><li><a href="projection-seuil.html">Projection du seuil</a></li></ul></div>
+    <div><h4>Guides</h4><ul><li><a href="vinted-impots.html">Impôts Vinted</a></li><li><a href="leboncoin-impots.html">Impôts Leboncoin</a></li><li><a href="seuil-30-ventes-2000-euros.html">Seuil DAC7</a></li></ul></div>
+    <div><h4>Sources</h4><ul><li><a href="https://www.impots.gouv.fr/revenus-de-plateformes-collaboratives-0" rel="noopener">impots.gouv.fr</a></li><li><a href="https://www.vinted.fr/dac7" rel="noopener">Vinted – DAC7</a></li><li><a href="https://www.autoentrepreneur.urssaf.fr" rel="noopener">URSSAF</a></li></ul></div>
+  </div>
+  <p class="foot-legal">Vendeur Clair donne une information générale et ne remplace pas l'avis d'un professionnel. Les règles fiscales évoluent : vérifie ta situation sur les sites officiels. Site indépendant, sans lien avec Vinted, Leboncoin, eBay ou Etsy.</p>
+</div></footer>
+<script src="declaration.js"></script>
+</body>
+</html>

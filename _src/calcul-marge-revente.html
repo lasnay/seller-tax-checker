@@ -1,0 +1,31 @@
+<!--
+title: Calcul de marge revente Vinted, Leboncoin : bénéfice net et bon prix
+description: Calcule ton bénéfice net sur une revente Vinted, Leboncoin ou eBay : prix d'achat, envoi, frais, cotisations micro-entrepreneur. Et trouve le prix de vente minimum.
+hero: Tous les outils | Combien tu gagnes vraiment sur une revente ? | Prix d'achat, envoi, frais, cotisations : tu vois ce qu'il te reste, et le prix minimum à afficher.
+script: margin.js
+-->
+<div class="wrap panel-wrap"><div class="panel">
+  <div class="block">
+    <h2><span class="step">1</span>L'article</h2>
+    <div class="grid2">
+      <label class="lbl">Prix d'achat (€)<input type="number" id="buy" min="0" step="0.01" value="10" inputmode="decimal"></label>
+      <label class="lbl">Prix de vente (€)<input type="number" id="sell" min="0" step="0.01" value="25" inputmode="decimal"></label>
+      <label class="lbl">Envoi à ta charge (€)<input type="number" id="ship" min="0" step="0.01" value="0" inputmode="decimal"></label>
+      <label class="lbl">Autres frais (€)<small style="font-weight:600"> emballage, mise en avant…</small><input type="number" id="extra" min="0" step="0.01" value="0" inputmode="decimal"></label>
+      <label class="lbl">Commission de la plateforme (%)<input type="number" id="fee" min="0" max="100" step="0.1" value="0" inputmode="decimal"></label>
+      <label class="lbl">Bénéfice visé (€)<input type="number" id="target" min="0" step="0.5" value="10" inputmode="decimal"></label>
+    </div>
+    <p class="note">Sur Vinted, un vendeur particulier ne paie pas de commission : c'est l'acheteur qui paie la protection acheteurs. Sur les autres plateformes, vérifie le taux affiché.</p>
+  </div>
+  <div class="block">
+    <h2><span class="step">2</span>Ton statut</h2>
+    <div class="seg" role="radiogroup" aria-label="Statut">
+      <input type="radio" name="status" id="s-perso" value="perso" checked>
+      <label for="s-perso">Particulier<small>je vends mes affaires</small></label>
+      <input type="radio" name="status" id="s-micro" value="micro">
+      <label for="s-micro">Micro-entrepreneur<small>12,3 % du prix de vente</small></label>
+    </div>
+    <label class="check" id="vlWrap" hidden><input type="checkbox" id="vl"> Versement libératoire de l'impôt (+1 %)</label>
+  </div>
+  <div class="block result" id="result" aria-live="polite"></div>
+</div></div>

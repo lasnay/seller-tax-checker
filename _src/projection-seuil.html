@@ -1,0 +1,18 @@
+<!--
+title: Vais-je dépasser 30 ventes ou 2 000 € cette année ? Projection gratuite
+description: À ton rythme actuel, combien de ventes et quel montant en fin d'année sur Vinted ou Leboncoin, et à quelle date tu passerais le seuil DAC7 de 30 ventes ou 2 000 €.
+hero: Tous les outils | Vais-je dépasser le seuil cette année ? | À ton rythme actuel, on calcule où tu en seras au 31 décembre, et à quelle date tu passerais le seuil.
+script: projection.js
+-->
+<div class="wrap panel-wrap"><div class="panel">
+  <div class="block">
+    <h2><span class="step">1</span>Où en es-tu sur une plateforme ?</h2>
+    <p class="sub">Regarde ton historique de ventes depuis le 1er janvier sur la plateforme choisie.</p>
+    <div class="grid2">
+      <label class="lbl">Ventes depuis le 1er janvier<input type="number" id="count" min="0" step="1" value="12" inputmode="numeric"></label>
+      <label class="lbl">Total encaissé (€)<input type="number" id="amount" min="0" step="1" value="380" inputmode="decimal"></label>
+      <label class="lbl">À la date du<input type="date" id="date"></label>
+    </div>
+  </div>
+  <div class="block result" id="result" aria-live="polite"></div>
+</div></div>
