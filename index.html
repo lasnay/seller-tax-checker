@@ -9,55 +9,87 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="hero">
-  <div class="wrap">
-    <h1>Dois-je déclarer mes ventes Vinted, Leboncoin ou eBay ?</h1>
-    <p>Entre tes chiffres de l'année. Tu sais tout de suite si la plateforme va te déclarer au fisc, et ce que ça change pour toi. Rien n'est enregistré : les calculs restent dans ton navigateur.</p>
+<header class="top"><div class="wrap bar">
+  <a class="brand" href="index.html"><span class="mark"></span>Vendeur Clair</a>
+  <nav><a href="vinted-impots.html">Impôts Vinted</a><a href="leboncoin-impots.html">Impôts Leboncoin</a><a href="seuil-30-ventes-2000-euros.html">Seuil DAC7</a></nav>
+</div></header>
+
+<section class="wrap hero">
+  <div>
+    <p class="eyebrow">Vinted · Leboncoin · eBay · Etsy</p>
+    <h1>Ta plateforme va-t-elle te déclarer au fisc ?</h1>
+    <p class="lead">Entre tes ventes de l'année. Tu sais en 30 secondes si tu es concerné, et ce que ça change vraiment pour toi.</p>
+    <ul class="proofs">
+      <li>Seuils officiels de la directive DAC7</li>
+      <li>Aucune donnée enregistrée : tout reste dans ton navigateur</li>
+      <li>Gratuit, sans inscription</li>
+    </ul>
   </div>
-</header>
 
-<main class="wrap">
-  <section class="card">
-    <h2>1. Tes ventes de l'année, plateforme par plateforme</h2>
-    <p class="hint">Les seuils se comptent <strong>par plateforme</strong>. Laisse à 0 celles que tu n'utilises pas.</p>
-    <div class="table" id="platforms"></div>
-  </section>
-
-  <section class="card">
-    <h2>2. Que vends-tu ?</h2>
-    <label class="choice"><input type="radio" name="profile" value="perso" checked>
-      <span><strong>Mes affaires personnelles</strong> (vêtements, objets que j'ai utilisés et dont je me sépare)</span></label>
-    <label class="choice"><input type="radio" name="profile" value="resale">
-      <span><strong>J'achète pour revendre</strong> (même occasionnellement, dans le but de faire une marge)</span></label>
-    <div id="resaleFields" hidden>
-      <label class="field">Ce que j'ai dépensé en achats cette année (€)
-        <input type="number" id="purchases" min="0" step="1" value="0" inputmode="decimal"></label>
+  <div class="tool" id="simulateur">
+    <div class="block">
+      <h2><span class="step">1</span>Tes ventes de l'année</h2>
+      <p class="sub">Les seuils se comptent plateforme par plateforme. Laisse à 0 celles que tu n'utilises pas.</p>
+      <div id="platforms"></div>
     </div>
-  </section>
+    <div class="block">
+      <h2><span class="step">2</span>Que vends-tu ?</h2>
+      <div class="seg" role="radiogroup" aria-label="Type de vente">
+        <input type="radio" name="profile" id="p-perso" value="perso" checked>
+        <label for="p-perso">Mes affaires<small>vêtements, objets utilisés</small></label>
+        <input type="radio" name="profile" id="p-resale" value="resale">
+        <label for="p-resale">J'achète pour revendre<small>pour faire une marge</small></label>
+      </div>
+      <div id="resaleFields" hidden>
+        <label class="field">Mes achats de l'année (€)
+          <input type="number" id="purchases" min="0" step="1" value="0" inputmode="decimal"></label>
+      </div>
+    </div>
+    <div class="result" id="result" aria-live="polite"></div>
+  </div>
+</section>
 
-  <section class="card result" id="result" aria-live="polite"></section>
+<section class="section"><div class="wrap">
+  <h2>Comment ça marche</h2>
+  <p class="kicker" style="color:var(--muted);margin:0 0 26px">Trois idées à retenir.</p>
+  <div class="how">
+    <div><b>Les plateformes te déclarent à partir d'un seuil</b><span>30 ventes ou plus de 2 000 € sur l'année, par plateforme. Un seul critère suffit.</span></div>
+    <div><b>Être déclaré n'est pas être imposé</b><span>C'est une information transmise au fisc. Elle ne crée aucun impôt à elle seule.</span></div>
+    <div><b>Ce qui compte : ce que tu vends</b><span>Tes affaires d'occasion : en principe non imposables. Acheter pour revendre : activité commerciale.</span></div>
+  </div>
+</div></section>
 
-  <section class="card">
-    <h2>Questions fréquentes</h2>
-    <details><summary>C'est quoi DAC7 ?</summary>
-      <p>Une directive européenne. Depuis 2023, les plateformes (Vinted, Leboncoin, eBay, Etsy…) transmettent à l'administration fiscale les ventes des vendeurs qui atteignent 30 ventes ou 2 000 € sur une année civile. Ce n'est pas un impôt : c'est une information envoyée au fisc.</p></details>
-    <details><summary>Si Vinted me déclare, vais-je payer des impôts ?</summary>
-      <p>Pas automatiquement. Vinted précise lui-même que remplir ces seuils ne rend pas forcément les ventes imposables. Vendre ses affaires personnelles d'occasion n'est en principe pas imposable. Acheter pour revendre de façon régulière, en revanche, est une activité commerciale.</p></details>
-    <details><summary>Les seuils sont-ils cumulés entre plateformes ?</summary>
-      <p>Non : chaque plateforme compte de son côté. Mais si tu achètes pour revendre, ce qui compte pour l'administration est ton activité totale, toutes plateformes confondues.</p></details>
-    <details><summary>Comment sont calculées les cotisations ?</summary>
-      <p>Pour la vente de marchandises en micro-entreprise, le taux de cotisations sociales est de 12,3 % du chiffre d'affaires en 2026 (et non du bénéfice), hors impôt sur le revenu. Au début de l'activité, l'ACRE peut baisser ce taux. Vérifie le taux à jour sur autoentrepreneur.urssaf.fr.</p></details>
-  </section>
+<section class="section"><div class="wrap">
+  <h2>Les guides</h2>
+  <p class="kicker" style="color:var(--muted);margin:0 0 26px">Les règles officielles, sans jargon.</p>
+  <div class="guides">
+    <a class="guide" href="vinted-impots.html"><b>Impôts Vinted</b><span>Vinted déclare-t-il mes ventes ? Quand suis-je imposable ?</span><em>Lire le guide →</em></a>
+    <a class="guide" href="leboncoin-impots.html"><b>Impôts Leboncoin</b><span>Les mêmes règles appliquées aux ventes entre particuliers.</span><em>Lire le guide →</em></a>
+    <a class="guide" href="seuil-30-ventes-2000-euros.html"><b>Le seuil de 30 ventes ou 2 000 €</b><span>Ce que DAC7 veut dire, et ce qu'il ne veut pas dire.</span><em>Lire le guide →</em></a>
+  </div>
+</div></section>
 
-  <nav class="card"><strong>Guides</strong><ul><li><a href="vinted-impots.html">Impôts Vinted : faut-il déclarer ses ventes ?</a></li><li><a href="leboncoin-impots.html">Impôts Leboncoin : dois-je déclarer mes ventes ?</a></li><li><a href="seuil-30-ventes-2000-euros.html">Le seuil de 30 ventes ou 2 000 € (DAC7)</a></li></ul></nav>
+<section class="section"><div class="wrap faq">
+  <h2>Questions fréquentes</h2>
+  <p class="kicker" style="color:var(--muted);margin:0 0 20px">&nbsp;</p>
+  <details><summary>C'est quoi DAC7 ?</summary>
+    <p>Une directive européenne. Depuis 2023, les plateformes (Vinted, Leboncoin, eBay, Etsy…) transmettent à l'administration fiscale les ventes des vendeurs qui atteignent 30 ventes ou 2 000 € sur une année civile. Ce n'est pas un impôt : c'est une information envoyée au fisc.</p></details>
+  <details><summary>Si Vinted me déclare, vais-je payer des impôts ?</summary>
+    <p>Pas automatiquement. Vinted précise lui-même que remplir ces seuils ne rend pas forcément les ventes imposables. Vendre ses affaires personnelles d'occasion n'est en principe pas imposable. Acheter pour revendre de façon régulière, en revanche, est une activité commerciale.</p></details>
+  <details><summary>Les seuils sont-ils cumulés entre plateformes ?</summary>
+    <p>Non : chaque plateforme compte de son côté. Mais si tu achètes pour revendre, ce qui compte pour l'administration est ton activité totale, toutes plateformes confondues.</p></details>
+  <details><summary>Comment sont calculées les cotisations ?</summary>
+    <p>Pour la vente de marchandises en micro-entreprise, le taux de cotisations sociales est de 12,3 % du chiffre d'affaires en 2026 (et non du bénéfice), hors impôt sur le revenu. Au début de l'activité, l'ACRE peut baisser ce taux.</p></details>
+</div></section>
 
-  <p class="legal">Cet outil donne une information générale et ne remplace pas l'avis d'un professionnel. Les règles fiscales évoluent : vérifie ta situation sur les sites officiels.
-    Sources :
+<footer class="foot"><div class="wrap">
+  <p>Vendeur Clair donne une information générale et ne remplace pas l'avis d'un professionnel. Les règles fiscales évoluent : vérifie ta situation sur les sites officiels.</p>
+  <p>Sources :
     <a href="https://www.vinted.fr/dac7" rel="noopener">Vinted – DAC7</a> ·
-    <a href="https://www.impots.gouv.fr/revenus-de-plateformes-collaboratives-0" rel="noopener">impots.gouv.fr – plateformes collaboratives</a> ·
-    <a href="https://www.economie.gouv.fr/particuliers/impots-et-fiscalite/gerer-mon-impot-sur-le-revenu/vente-de-biens-personnels-faut-il-declarer-ces-revenus" rel="noopener">economie.gouv.fr – ventes de biens personnels</a> ·
+    <a href="https://www.impots.gouv.fr/revenus-de-plateformes-collaboratives-0" rel="noopener">impots.gouv.fr</a> ·
+    <a href="https://www.economie.gouv.fr/particuliers/impots-et-fiscalite/gerer-mon-impot-sur-le-revenu/vente-de-biens-personnels-faut-il-declarer-ces-revenus" rel="noopener">economie.gouv.fr</a> ·
     <a href="https://www.autoentrepreneur.urssaf.fr" rel="noopener">autoentrepreneur.urssaf.fr</a>.</p>
-</main>
+</div></footer>
 <script src="app.js"></script>
 </body>
 </html>
